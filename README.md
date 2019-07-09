@@ -49,3 +49,6 @@ The top section calls 2 functions
 - getLaneInfo –  The “look ahead” filter that uses the co-efficient from previous step and fits the polynomial returning the new coefficients  and the positions of the both the lanes.  
 
 The middle section uses the coefficients from the previous section and calculates the Radius of curvature in m and position of the vehicle with respect to center in the lane. You can find them in the section marked by the below comments.
+
+# Video
+[![Video](https://img.youtube.com/vi/kFCjNd2kdr4/0.jpg)](https://www.youtube.com/watch?v=kFCjNd2kdr4)
