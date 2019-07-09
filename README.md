@@ -41,7 +41,7 @@ This is hardcoded for all images and obtained after a result of trial and error 
 
 In code cell 18 fitPolynomial function accept the binary warped image and fits the polynomial line.
 
-![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/polynomial.PNG)
+![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/polynomial.png)
 
 It’s divided into 3 major sections separated by “##########################”
 The top section calls 2 functions  
