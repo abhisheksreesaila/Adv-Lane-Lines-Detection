@@ -13,10 +13,10 @@ To demonstrate this step, I will describe how I apply the distortion correction 
 # Step3: Use color transforms, gradients, etc., to create a threshold binary image.
 
 From code cell 6 there are 2 functions that performs the following actions to create a binary image
-1. **Sobel_operation  
+1. **Sobel_operation**  
 Converting the original image to gray, I applied open CV’s sobel operator in the X direction to obtain the following result.
 
-2. **hls_operation
+2. **hls_operation**
 Using open CV “COLOR_RGB2HLS” converted the source image into HLS color space.
 
 
@@ -30,7 +30,7 @@ From code cell 6 the function getBinaryWarpedImage takes the binary image along 
 This is hardcoded for all images and obtained after a result of trial and error on all the test images. I veriﬁed that my perspective transform was working as expected by drawing the src and dst points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 
-# Step 5 Detect lane pixels and fit to find the lane boundary, identify ROC calculation and the position of the vehicle with respect to center in the lane?
+# Step 5 Detect lane pixels and fit to find the lane boundary, identify ROC calculation and the position of the vehicle with respect to center in the lane
 
 In code cell 18 fitPolynomial function accept the binary warped image and fits the polynomial line.
 
