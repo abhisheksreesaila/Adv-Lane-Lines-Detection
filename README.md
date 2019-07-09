@@ -7,21 +7,27 @@ I start by preparing "object points", which will be the (x, y, z) coordinates of
 # Step 1 : Calibrate Images
 I then used the output objpoints and imgpoints to compute the camera calibration and distortion coefficients using the cv2.calibrateCamera() function. I applied this distortion correction to the test image using the cv2.undistort () function and obtained this result:  
 
+![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/calibrate.PNG)
+
 # Step 2: Apply a distortion correction to raw images
-To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one. We use the camera matrix, distortion coefficients and use cv2.undistort() to apply on the raw images and result is below.  
+To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one. We use the camera matrix, distortion coefficients and use cv2.undistort() to apply on the raw images and result is below.
+
+![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/distortionCorrection.PNG)
 
 # Step3: Use color transforms, gradients, etc., to create a threshold binary image.
-
 From code cell 6 there are 2 functions that performs the following actions to create a binary image
 1. **Sobel_operation**  
 Converting the original image to gray, I applied open CV’s sobel operator in the X direction to obtain the following result.
 
+![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/sobel_operation.PNG)
+
 2. **hls_operation**
 Using open CV “COLOR_RGB2HLS” converted the source image into HLS color space.
 
-
+![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/hls_operation.PNG)
 Now the result of these 2 functions is combined to get the following binary image.
 
+![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/hls2.PNG)
 
 # Step 4.	Apply a perspective transform to rectify binary image ("birds-eye view").
 From code cell 6 the function getBinaryWarpedImage takes the binary image along with SOURCE and DESTINATION points as stated below, along with MATRIX obtained by calibration camera in step 1 to produce a binary warped image.
@@ -29,11 +35,13 @@ From code cell 6 the function getBinaryWarpedImage takes the binary image along 
   dst = np.float32([[300, 710],[300, 0],[880, 0],[880,710]])
 This is hardcoded for all images and obtained after a result of trial and error on all the test images. I veriﬁed that my perspective transform was working as expected by drawing the src and dst points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
+![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/transform.PNG)
 
 # Step 5 Detect lane pixels and fit to find the lane boundary, identify ROC calculation and the position of the vehicle with respect to center in the lane
 
 In code cell 18 fitPolynomial function accept the binary warped image and fits the polynomial line.
 
+![doc.png](https://github.com/abhisheksreesaila/CarND-Advanced-Lane-Lines/blob/master/polynomial.PNG)
 
 It’s divided into 3 major sections separated by “##########################”
 The top section calls 2 functions  
